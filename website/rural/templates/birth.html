@@ -1,0 +1,182 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">E-REGISTRATION</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="register">REGISTER</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login">LOGIN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="birth">BIRTH REGISTRATION</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="death">DEATH REGISTRATION</a>
+              </li>
+               <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown link
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="program" style="background:linear-gradient(#FFEFBA,#FFFFFF);" >
+      <h1 style="text-align: center; font-weight: bolder;color: #11998e;">BIRTH</h1>
+      <p style="font-weight: bold; text-align: justify;padding-left:30px;font-size:larger;padding-right:30px;">The birth has to be registered with the concerned local authority, which issues the certificate. For instance in Delhi, the Municipal Corporation of Delhi, the New Delhi Municipal Corporation or the Delhi Cantonment Board would issue the birth certificate. In the urban areas, Municipal Corporation or Municipal Council issues the certificate. In rural areas the Tehsildar or the Gram Panchayat Office issues it.</p>
+      </div>
+
+      <div class="card-group" style="text-align:justify;padding: 20px;margin-left:2%;margin-right:2%;background:linear-gradient(#FFEFBA,#FFFFFF);">
+        <div class="card px-4">
+          <img src="../static/images/baby2.jpg" class="card-img-top container" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;font-weight: bolder;">How to apply for a late birth certificate?
+            </h5>
+            <p class="card-text" style="font-weight: bold; text-align: justify;padding-left:25px;font-size:large;">The period for applying for a birth certificate is within 21 days of a child being born. However, if due to some reason, parents fail to register the child within the stipulated time, they have to pay a late fee (in case registration is done within a month). This is possible under the Delayed Registration provisions prescribed under Section 13 of the Act.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card px-4">
+          <img src="../static/images/baby4.jpg" class="card-img-top container" style="height: 230px;" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;font-weight: bolder;" > Procedure for birth registration for a child born outside India.</h5>
+            <p class="card-text" style="font-weight: bold; text-align: justify;padding-left:30px;font-size:large;">For children born outside India, their birth is registered under the provisions of the Citizenship Act 1955 and Citizens (Registration at Indian consulates) Rules, 1956 at the Indian Missions. However, if the parents of the child return to India to settle, the birth can be registered within 60 days from the date of arrival of the child to India, after which the delayed registration provisions are applicable.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card px-4">
+          <img src="../static/images/baby1.jpg" class="card-img-top container" style="height: 230px;"  alt="...">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;font-weight: bolder;">Where is a birth certificate required?</h5>
+            <p class="card-text" style="font-weight: bold; text-align: justify;padding-left:30px;font-size:large;">A birth certificate is required when a person needs to establish their age, claim social security benefits, apply for passport, obtain documents such as driving license, passport, marriage certificate, etc.
+
+              A birth certificate is also needed for admission in educational institutes and government jobs.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="background:linear-gradient(#FFEFBA,#FFFFFF);">
+        <div class="card" style="padding-left:14rem;width:75rem;background-color:rgb(201, 202, 198);margin-left:1px;text-align:left;">
+      <h1>BIRTH DETAILS</h1>
+      
+      <form action="birth" method="post">
+       {% csrf_token %}
+     
+      <div class="mb-3 row" >
+        <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+        <div class="col-sm-5">
+          <input type="text" name="fname"  class="form-control" id="inputFirstName" placeholder="Enter Your First Name">
+        </div>
+      </div>
+        <div class="mb-3 row">
+        <label for="inputMiddleName" class="col-sm-2 col-form-label">Middle Name</label>
+        <div class="col-sm-5">
+          <input type="text" name="mname" class="form-control" id="inputMiddleName" placeholder="Enter Your Middle Name">
+        </div>
+        </div>
+         <div class="mb-3 row">
+        <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+        <div class="col-sm-5">
+          <input type="text" name="lname" class="form-control" id="inputLastName" placeholder="Enter Your Last Name">
+        </div>
+        </div>
+        <h6>Gender</h6>
+    <div class="form-check" >
+  <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Female">Female
+  <!-- <label class="form-check-label" for="flexRadioDefault1">
+    Female
+  </label>  -->
+  
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="Male">Male
+ <!-- <label class="form-check-label" for="flexRadioDefault2">
+    Male
+  </label>  -->
+</div>
+<div class="mb-3 row">
+    <label for="inputDateOfBirth" class="col-sm-2 col-form-label">Date Of Birth</label>
+    <div class="col-sm-5">
+      <input type="date" name="dob"  class="form-control" id="inputDateOfBirth" placeholder="Enter Your DateOfBirth">
+    </div>
+</div>
+    <div class="mb-3 row">
+        <label for="inputPlaceOfBirth" class="col-sm-2 col-form-label">Place Of Birth</label>
+        <div class="col-sm-5">
+          <input type="text" name="birthplace" class="form-control" id="inputPlaceOfBirth" placeholder="Enter Your PlaceOfBirth">
+        </div>
+    </div>
+        <div class="mb-3 row">
+            <label for="inputTimeOfBirth" class="col-sm-2 col-form-label">Time Of Birth</label>
+            <div class="col-sm-5">
+              <input type="time" name="birthtime" class="form-control" id="inputTimeOfBirth" placeholder="Enter Your TimeOfBirth">
+            </div>
+        </div>
+            <div class="mb-3 row">
+                <label for="inputNameOfFather" class="col-sm-2 col-form-label">Name Of Father</label>
+                <div class="col-sm-5">
+                  <input type="text" name="father" class="form-control" id="inputNameOfFather" placeholder="Enter Your Father's Name">
+                </div>
+            </div>
+                <div class="mb-3 row">
+                    <label for="inputNameOfMother" class="col-sm-2 col-form-label">Name Of Mother</label>
+                    <div class="col-sm-5">
+                      <input type="text" name="mother"  class="form-control" id="inputNameOfMother" placeholder="Enter Your Mother's Name">
+                    </div>
+                </div>
+                    <div class="mb-3 row">
+                        <label for="inputDateOfRegistration" class="col-sm-2 col-form-label">Date Of Registration</label>
+                        <div class="col-sm-5">
+                          <input type="date" name="registration" class="form-control" id="inputDateOfRegistration" placeholder="Enter Your DateOfRegistration">
+                        </div>
+                    </div> 
+                    <div class="mb-3 row">
+                        <label for="inputRegistrationNumber" class="col-sm-2 col-form-label">Registration Number</label>
+                        <div class="col-sm-5">
+                          <input type="number" name="number" class="form-control" id="inputRegistration Number" placeholder="Enter Your Registration Number">
+                        </div>
+                    </div> 
+                 
+                  <!-- <button class="btn btn-success" style="text-align:center;" type="submit">SUBMIT</button>
+                  <button class="btn btn-primary" type="cancel">EXIT</button>  -->
+                  
+                  <!-- <div class="col-md-12" style="margin-left: 250px;">
+                    <button type="button" class="btn btn-success">Submit</button>
+                    <button type="button" class="btn btn-outline-danger">Cancel</button>
+                </div>
+                    -->
+                <button type="submit" class="btn btn-info" style="background-color:linear-gradient(#9CECFB,#65C7F7,#0052D4)">SUMBIT</button>
+                <button type="button" class="btn  btn-warning">EXIT</button>
+
+               
+
+                </form>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+{% endblock content %}

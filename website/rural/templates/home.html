@@ -1,0 +1,143 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+   
+  
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">E-REGISTRATION</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="d-flex">
+        <div class="navigation-bar">
+        <div id="navigation-container">
+            <img src="../static/images/preg2.jpg" style="float:right;margin-left:22rem;height:42px;width:72px;"> 
+
+        <ul class="navbar-nav  mx-auto justify-content-center text-center">
+        
+          <li class="nav-item text-center">
+            <a class="nav-link" aria-current="page" href="home">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="register">REGISTER</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="login">LOGIN</a>
+          </li> -->
+          <!-- <ul class="navbar-nav mr-auto"> -->
+            {% if user.is_authenticated %}
+            
+            <li class="nav-item">
+              <a class="nav-link" href="logout">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+            </li>
+      
+      <li class="nav-item">
+            <a class="nav-link" href="/birth">BIRTH REGISTRATION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="death">DEATH REGISTRATION</a>
+          </li>
+            {% else %}
+      
+            <li class="nav-item">
+              <a class="nav-link" href="login">Login</a>
+            </li>
+      
+            {% endif %}
+          <!-- </ul> -->
+          
+          
+        </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </nav>
+
+   <div class="container-fluid" style="background: linear-gradient(#FFEFBA,#FFFFFF);">
+     <!-- <div class="inner-container" style="width:100%;height:100%;background:linear-gradient(135deg, rgba(0,0,0,0,4) 0%, rgba(0,0,0,0,4) 25%, rgba(0,23,149,0,6) 50%, rgba(255,0,0,0,6) 75%, rgba(0,23,149,0,6) 100%);position:absolute;top:0;left:0;background-repeat:no-repeat;background-size:100% 100%;">
+
+     </div> -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../static/images/baby0.jpg" class="d-block container-fluid" alt="..." style="height:500px;width:500px;">
+        </div>
+        <div class="carousel-item">
+          <img src="../static/images/baby7.jpg" class="d-block container-fluid" alt="..." style="height:500px;width:500px;">
+        </div>
+        <div class="carousel-item">
+          <img src="../static/images/baby12.jpg" class="d-block container-fluid" alt="..." style="height:500px;width:500px;">
+        </div>
+        <div class="carousel-item">
+          <img src="../static/images/baby9.jpg" class="d-block container-fluid" alt="..." style="height:500px;width:500px;">
+        </div>
+        <div class="carousel-item">
+          <img src="../static/images/baby10.jpg" class="d-block container-fluid" alt="..." style="height:500px;width:500px;">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  
+   <div class="card text-center" style="background: linear-gradient(#000000,#434343);">
+    <div class="card-header" style="background: linear-gradient(#FFEFBA,#FFFFFF);">
+      <h5 style="font-weight: bolder;color:red;">RULES FOR REGISTERING BIRTH CERTIFICATE</h5>
+    </div>
+    <div class="card-body" style="background: linear-gradient(#FFEFBA,#FFFFFF);">
+      <h5 class="card-title" style="color: blue;font-weight: bolder;">To Be Read Before Filling The Form</h5>
+      <p class="card-text" style="color:black;font-weight: 700;text-align: justify;font-size:large;">1.To apply for a Birth Certificate, you must first register the birth with “panchayat/ municipal/Corporation / Health Department” in your area.<br>
+        2.The birth has to be registered with the concerned local authorities within 21 days of its occurrence, by
+        filling up the form prescribed by the registering authority or as per the given link below along with a certificate from the person or Medical Institution, who conducted delivery in the case of birth.<br>
+        3.Beyond the prescribed time limit,<br>
+        i) 21 to 30 Days – With penalty of Rs.100<br>
+        ii) 30 days to 1 year - Written permission of the Officer prescribed and on payment of late fee of Rs. 200 <br>
+        iii) After 1 year - Any birth which has not been registered within one year of its occurrence shall be
+        registered by an order of the Executive Magistrate not below the rank of a Revenue Divisional Officer and on
+        payment of late fee of Rs. 500 <br></p>
+      <a href="#" class="btn btn-primary">OK</a>
+    </div>
+    
+  </div>
+
+  <div class="card text-center" style="background: linear-gradient(#000000,#434343);">
+    <div class="card-header" style="background: linear-gradient(#FFEFBA,#FFFFFF);" >
+      <h5 style="font-weight: bolder;color: red;">RULES FOR REGISTERING DEATH CERTIFICATE</h5>
+    </div>
+    <div class="card-body" style="background: linear-gradient(#FFEFBA,#FFFFFF);">
+      <h5 class="card-title" style="color: blue;font-weight: bolder;">To Be Read Before Filling The Form</h5>
+      <p class="card-text" style="color:black;font-weight: 700;text-align: justify;font-size:large;">1. A fee of Rs. 25 has to be paid for each copy.<br>
+        2.If the date of death is unknown or unspecified, the search fee for every year is Rs. 25(per copy).<br>
+        3.If there is a delay in the registering of deaths, such as if it is less than one month, it can be acquired
+        without penalty; more than a month and less than a year, a fee of Rs. 25 has to be paid for each copy; and if it
+        is more than a year with the order of Magistrate it is Rs.50.<br>
+        4.As per the rules of the court, a fee stamp of Rs.2 should be affixed in the application form.<br></p>
+      <a href="#" class="btn btn-primary">OK</a>
+    </div>
+    
+  </div>
+  
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+{% endblock content %}
